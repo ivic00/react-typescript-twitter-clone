@@ -7,6 +7,8 @@ import MUITextField from "./components/TestComp/MUITextField";
 import MUISelect from "./components/TestComp/MUISelect";
 import MUIRadioBtn from "./components/TestComp/MUIRadioBtn";
 import MUILayout from "./components/TestComp/MUILayout";
+import NavigationBar from "./components/AppBar/NavigationBar";
+import PostCard from "./components/Feed/PostCard";
 
 function App() {
   return (
@@ -15,7 +17,8 @@ function App() {
       {/*<MUISelect/>*/}
       {/*<MUIRadioBtn />*/}
       {/*<MUILayout />*/}
-      <LoginForm />
+      <NavigationBar />
+      <PostCard/>
     </div>
   );
 }

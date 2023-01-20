@@ -1,9 +1,19 @@
-import { Box, Button, ButtonGroup, Card, Stack, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Card,
+  Paper,
+  Stack,
+  TextField,
+} from "@mui/material";
+import './LoginForm.css'
+
 
 function LoginForm() {
   return (
-    <Box sx={{display:"flex", justifyContent: "center"}}>
-      <Card sx={{ padding: 2/1,}}>
+      <Box className="LoginBox" sx={{ display: "flex", justifyContent: "center"}}>
+      <Paper sx={{ padding: 4, borderRadius: 5, margin:10}} elevation={20} >
         <Stack direction="column" spacing={2} alignItems="center">
           <TextField
             id="username"
@@ -17,13 +27,14 @@ function LoginForm() {
             variant="outlined"
             type="password"
           />
-          <ButtonGroup variant="contained">
-            <Button variant="outlined">Login</Button>
-            <Button>Register</Button>
+          <ButtonGroup variant="contained" disableElevation>
+            <Button variant="outlined" sx={{borderRadius:3}}>Login</Button>
+            <Button sx={{borderRadius:3}}>Register</Button>
           </ButtonGroup>
         </Stack>
-      </Card>
+      </Paper>
     </Box>
+    
   );
 }
 
