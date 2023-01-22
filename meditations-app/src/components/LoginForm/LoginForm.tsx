@@ -12,8 +12,8 @@ import './LoginForm.css'
 
 function LoginForm() {
   return (
-      <Box className="LoginBox" sx={{ display: "flex", justifyContent: "center"}}>
-      <Paper sx={{ padding: 4, borderRadius: 5, margin:10}} elevation={20} >
+      <Box className="LoginBox" sx={{ display: "flex", justifyContent: "center", marginBottom:2}}>
+      <Paper sx={{ padding: 4, borderRadius: 5, marginTop:10}} elevation={5} >
         <Stack direction="column" spacing={2} alignItems="center">
           <TextField
             id="username"

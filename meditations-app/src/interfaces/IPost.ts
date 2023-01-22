@@ -1,7 +1,8 @@
 import internal from "stream";
 
 export interface IPost{
-    //later add ID 
+    id: Number,
+    username: String,
     text: String,
     //later add userID
     uploadDateTime: Date,

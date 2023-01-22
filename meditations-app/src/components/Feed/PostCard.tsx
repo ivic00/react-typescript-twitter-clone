@@ -7,57 +7,48 @@ import {
   IconButton,
   CardContent,
   Typography,
+  Button,
 } from "@mui/material";
 import { IPost } from "../../interfaces/IPost";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
+import './PostCard.css'
 
-function PostCard(/*props: IPost*/) {
-  const posts: IPost[] = [
-    {
-      text: "yall aint even",
-      uploadDateTime: new Date(Date.UTC(2021, 9, 15, 16, 35, 3)),
-      likes: 23,
-      dislikes: 0,
-    },
-    {
-      text: "Guys stopppp",
-      uploadDateTime: new Date(Date.UTC(2021, 9, 15, 16, 35, 3)),
-      likes: 69,
-      dislikes: 420,
-    },
-  ];
+
+
+function PostCard({ post }: { post: IPost }) {
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }}>
-      <Card sx={{ padding: 1, borderRadius: 5, margin: 10 }} elevation={5}>
+      <Card
+        className="postCard"
+        sx={{ padding: 1, borderRadius: 5, margin: 1, borderColor: "grey.500" }}
+        elevation={1}
+      >
         <Stack direction="column" spacing={0.5} alignItems="left">
           <CardHeader
             avatar={
-              <Avatar variant="square" sx={{ borderRadius: 2 }}>
-                id
+              <Avatar variant="square" sx={{ borderRadius: 2}} >
+                {post.id.toString()}
               </Avatar>
             }
-            title={<Typography variant="h6">Username</Typography>}
+            title={<Typography variant="h6">{post.username}</Typography>}
             sx={{ padding: 1 }}
           />
           <CardContent sx={{ padding: 2, paddingBottom: 1 }}>
             <Typography variant="body1" color="initial">
-              This is where the post text goes This is where the post text goes
-              This is where the post text goes This is where the post text goes
+              {post.text}
             </Typography>
           </CardContent>
           <Stack
             direction="row"
             spacing={1}
-            alignItems="center"
-            sx={{ paddingLeft: 2 }}
+            justifyContent="flex-end"
+            sx={{ paddingRight: 2 }}
           >
-            <IconButton>
-              <ThumbUpOffAltIcon />
-            </IconButton>
-            <IconButton>
-              <ThumbDownOffAltIcon />
-            </IconButton>
+            <Button startIcon={<ThumbUpOffAltIcon />} size='large' color="secondary">
+              <Typography>{post.likes.toString()}</Typography>
+            </Button>
+            <Button startIcon={<ThumbDownOffAltIcon />} size='large' color="secondary">{post.dislikes.toString()}</Button>
           </Stack>
         </Stack>
       </Card>
