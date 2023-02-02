@@ -10,13 +10,10 @@ import MeditateButton from "./components/MeditateButton/MeditateButton";
 const customTheme = createTheme({
   palette: {
     primary: {
-      main: "#880e4f",
+      main: '#26a69a',
     },
     secondary: {
-      main: "#00695c",
-    },
-    background: {
-      default: "#303030",
+      main: '#ef5350',
     },
   },
 });
